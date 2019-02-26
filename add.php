@@ -8,10 +8,10 @@ public function addArticle(Request $request){
              return response([
                 'status' => 'error',
                 'title' => 'Hata',
-                'content' => 'Y¸klediiniz resmin uzant˝s˝ jpg,jpeg,png,gif olmal˝ ve resim maksimumum 2 mb olmal˝d˝r.'
+                'content' => 'Y√ºkledi√∞iniz resmin uzant√Ωs√Ω jpg,jpeg,png,gif olmal√Ω ve resim maksimumum 2 mb olmal√Ωd√Ωr.'
             ]);
         }
-        //Resimi biÁimlendirme
+        //Resimi bi√ßimlendirme
         $image = Input::file('article_image');
         $image_extension = Input::file('article_image')->getClientOriginalExtension();
         $image_name = $slug."-1200x800-".time().".".$image_extension;
@@ -60,7 +60,7 @@ public function addArticle(Request $request){
                                     return response([
                                         'status' => 'error',
                                         'title' => 'Hata',
-                                        'content' => 'Y¸klediiniz resimlerin uzant˝s˝ jpg,jpeg,png,gif olmal˝d˝r.'
+                                        'content' => 'Y√ºkledi√∞iniz resimlerin uzant√Ωs√Ω jpg,jpeg,png,gif olmal√Ωd√Ωr.'
                                     ]);
                                 }
                                 $image_name = $i . "." . $image_extension;
@@ -77,24 +77,23 @@ public function addArticle(Request $request){
 
                         }
 
-                        return response(['status' => 'success', 'title' => 'Ba˛ar˝l˝', 'content' => 'Ba˛ar˝yla Kaydedildi']);
+                        return response(['status' => 'success', 'title' => 'Ba√æar√Ωl√Ω', 'content' => 'Ba√æar√Ωyla Kaydedildi']);
                 } else {
                     return response([
                         'status' => 'error',
                         'title' => 'Hata',
-                        'content' => 'S˝ralama Say˝sal Bir Deer Olmal˝d˝r'
+                        'content' => 'S√Ωralama Say√Ωsal Bir De√∞er Olmal√Ωd√Ωr'
                     ]);
                 }
             } else {
                 return response([
                     'status' => 'error',
                     'title' => 'Hata',
-                    'content' => 'Makale Ba˛l˝˝ ve ›Áerii Bo˛ GeÁilemez...'
+                    'content' => 'Makale Ba√æl√Ω√∞√Ω ve √ù√ßeri√∞i Bo√æ Ge√ßilemez...'
                 ]);
             }
 
         } catch (\Exception $e){
-            return response(['status' => 'error', 'title' => 'Hata', 'content' => 'Kay˝t'. str_limit($e,200) . 'Hatas˝ndan Dolay˝ Yap˝lamad˝']);
+            return response(['status' => 'error', 'title' => 'Hata', 'content' => 'Kay√Ωt'. str_limit($e,200) . 'Hatas√Ωndan Dolay√Ω Yap√Ωlamad√Ω']);
         }
-
-    }
+}
