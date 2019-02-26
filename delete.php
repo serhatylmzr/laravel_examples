@@ -16,5 +16,5 @@ public function deleteArticle($id){
         }
         $article->delete();
         return redirect()->route('adminpanel.articles')->with('message_variable', 'success')
-            ->with('message', 'Blog Yaz˝s˝ Ba˛ar˝yla Silindi');
-    }
+            ->with('message', 'Blog Yaz√Ωs√Ω Ba√æar√Ωyla Silindi');
+}
